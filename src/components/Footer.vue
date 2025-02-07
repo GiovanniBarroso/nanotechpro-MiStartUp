@@ -23,7 +23,7 @@
 
             <!-- Redes Sociales -->
             <div class="footer-section">
-                <h3>Redes Sociales 📱</h3>
+                <h3>📱 Redes Sociales</h3>
                 <div class="social-icons">
                     <a href="#" target="_blank"><img src="../../brands/facebook icon.png" alt="Facebook"></a>
                     <a href="#" target="_blank"><img src="../../brands/twitter icon.png" alt="Twitter"></a>
@@ -45,7 +45,7 @@
 /* Estilos generales */
 .footer {
     background: #222;
-    color: white;
+    color: rgb(108, 47, 47);
     padding: 40px 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -120,8 +120,8 @@
 /* Redes sociales */
 .social-icons {
     display: flex;
-    justify-content: center; /* Centra los iconos horizontalmente */
-    align-items: center; /* Alinea los iconos verticalmente */
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-top: 10px;
     text-align: center;
@@ -130,14 +130,14 @@
 .social-icons img {
     width: 35px;
     height: 35px;
-    filter: brightness(0) invert(1); /* Convierte iconos negros a blancos */
+    filter: brightness(0) invert(1);
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    display: block; /* Asegura que no haya espacio extra debajo del icono */
+    display: block;
 }
 
 .social-icons img:hover {
-    transform: scale(1.2);
-    filter: brightness(1); /* Cambia el color al hacer hover */
+    transform: scale(1.5);
+    filter: brightness(1);
 }
 
 

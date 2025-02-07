@@ -94,7 +94,7 @@ h3 {
 }
 
 .details-button {
-    background: #ffeb3b;
+    background: #FF9800;
     border: none;
     padding: 12px;
     cursor: pointer;
