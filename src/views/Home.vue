@@ -116,7 +116,7 @@ const nextReview = () => {
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, 0.8); 
+    background: rgba(0, 0, 0, 0.8);
     padding: 40px;
     border-radius: 10px;
     display: inline-block;
@@ -164,6 +164,7 @@ const nextReview = () => {
     border-radius: 5px;
     text-align: center;
 }
+
 .values {
     background: #1a1a1a;
     color: white;
