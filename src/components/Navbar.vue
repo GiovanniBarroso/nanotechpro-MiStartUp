@@ -100,7 +100,7 @@ const closeMenu = () => {
 }
 
 .nav-links li a:hover {
-    color: #ffeb3b;
+    color: #FF9800;
     transform: scale(1.1);
 }
 

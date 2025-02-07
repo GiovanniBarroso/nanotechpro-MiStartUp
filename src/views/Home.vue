@@ -58,7 +58,10 @@
             <div class="info-box">
                 <h3>Ubicación</h3>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.9059169721113!2d-5.983557023026339!3d37.486546496999544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd124200766660cd%3A0x876b94055cebd47!2s41309%20La%20Rinconada%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1738930312185!5m2!1ses!2ses" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.9059169721113!2d-5.983557023026339!3d37.486546496999544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd124200766660cd%3A0x876b94055cebd47!2s41309%20La%20Rinconada%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1738930312185!5m2!1ses!2ses"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <p>📍 Dirección: Calle Ejemplo 123, Ciudad.</p>
                 <p>📞 Teléfono: +34 123 456 789</p>

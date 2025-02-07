@@ -45,7 +45,7 @@
 /* Estilos generales */
 .footer {
     background: #222;
-    color: rgb(108, 47, 47);
+    color: rgb(255, 255, 255);
     padding: 40px 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -75,7 +75,7 @@
 .footer-section h3 {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    border-bottom: 2px solid #ffeb3b;
+    border-bottom: 2px solid #FF9800;
     padding-bottom: 5px;
     display: inline-block;
 }
@@ -93,7 +93,7 @@
 }
 
 .footer-section a:hover {
-    color: #ffeb3b;
+    color: #FF9800;
     text-decoration: underline;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .footer-section ul li a:hover {
-    color: #ffeb3b;
+    color: #FF9800;
 }
 
 /* Redes sociales */
@@ -152,7 +152,7 @@
 }
 
 .footer-bottom a {
-    color: #ffeb3b;
+    color: #FF9800;
     text-decoration: none;
     font-weight: bold;
 }
