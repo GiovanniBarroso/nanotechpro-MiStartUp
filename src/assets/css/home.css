@@ -329,29 +329,78 @@
     display: flex;
     justify-content: space-around;
     background: white;
-    padding: 10px;
+    padding: 40px 20px;
     border-radius: 10px;
     margin: auto;
     width: 80%;
     flex-wrap: wrap;
 }
 
+/* Estilos generales de las cajas */
 .info-box {
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    margin: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.faq-box {
     background: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     flex: 1;
     min-width: 250px;
-    margin: 10px;
+    max-width: 800px;  /* Límite para mejor legibilidad */
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.info-box img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
+.faq-list {
+    list-style: none;
+    padding: 0;
 }
 
-.info-box p {
+.faq-list li {
+    margin-bottom: 15px;
     font-size: 1rem;
+    line-height: 1.6;
+    transition: background 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.faq-list li:hover {
+    background: #e9ecef;  /* Suave gris al pasar el mouse */
+    cursor: pointer;
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .location-faq {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+    }
+
+    .faq-list li {
+        flex-direction: column;
+        text-align: center;
+    }
 }

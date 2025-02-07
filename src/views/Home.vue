@@ -56,7 +56,7 @@
         <!-- UBICACIÓN Y FAQ -->
         <section class="location-faq">
             <div class="info-box">
-                <h3>Ubicación</h3>
+                <h3>📍 Ubicación</h3>
                 <div class="map-container">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.9059169721113!2d-5.983557023026339!3d37.486546496999544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd124200766660cd%3A0x876b94055cebd47!2s41309%20La%20Rinconada%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1738930312185!5m2!1ses!2ses"
@@ -66,13 +66,40 @@
                 <p>📍 Dirección: Calle Ejemplo 123, Ciudad.</p>
                 <p>📞 Teléfono: +34 123 456 789</p>
             </div>
-            <div class="info-box">
-                <h3>FAQ</h3>
-                <p><strong>⏳ ¿Cuánto tarda la reparación?</strong><br> En promedio 24-48 horas.</p>
-                <p><strong>✅ ¿Tienen garantía?</strong><br> Sí, de 3 a 6 meses.</p>
-                <p><strong>📩 ¿Cómo contactar?</strong><br> WhatsApp o formulario.</p>
-            </div>
+
+            <div class="info-box faq-box">
+    <h3>📌 Preguntas Frecuentes (FAQ)</h3>
+    <ul class="faq-list">
+        <li>
+            <span class="faq-icon">⏳</span>
+            <strong>¿Cuánto tiempo tardan en reparar mi dispositivo?</strong> <br>
+            Nuestro tiempo de reparación varía según el daño y la disponibilidad de piezas. Sin embargo, en la mayoría de los casos, lo tendrás listo en **24 a 48 horas**.
+        </li>
+        <li>
+            <span class="faq-icon">🔧</span>
+            <strong>¿Usan repuestos originales?</strong> <br>
+            Sí, trabajamos únicamente con **piezas originales y de alta calidad**, garantizando un rendimiento óptimo y duradero para tu dispositivo.
+        </li>
+        <li>
+            <span class="faq-icon">✅</span>
+            <strong>¿Tienen garantía?</strong> <br>
+            Ofrecemos garantía de **3 a 6 meses** en todas nuestras reparaciones, para que tengas la tranquilidad de que tu equipo estará en las mejores condiciones.
+        </li>
+        <li>
+            <span class="faq-icon">💳</span>
+            <strong>¿Qué métodos de pago aceptan?</strong> <br>
+            Puedes pagar con **tarjeta de crédito/débito, transferencia bancaria o efectivo en nuestra tienda**.
+        </li>
+        <li>
+            <span class="faq-icon">📩</span>
+            <strong>¿Cómo puedo contactarlos?</strong> <br>
+            Puedes comunicarte con nosotros a través de **WhatsApp, llamada telefónica o nuestro formulario en línea**. ¡Estamos aquí para ayudarte!
+        </li>
+    </ul>
+</div>
+
         </section>
+
 
     </div>
 </template>
@@ -90,10 +117,23 @@ const brands = ref([
 ]);
 
 const values = ref([
-    { title: "Tiempo Récord", description: "Reparamos en menos de 48 horas.", icon: "../../public/brands/card1.png" },
-    { title: "Calidad", description: "Usamos repuestos originales.", icon: "../../public/brands/card2.png" },
-    { title: "Sin Compromiso", description: "Presupuesto sin compromiso.", icon: "../../public/brands/card3.png" },
+    {
+        title: "Tiempo Récord",
+        description: "Optimizamos cada proceso para que tu reparación esté lista en menos de 48 horas, sin comprometer la calidad.",
+        icon: "../../public/brands/card1.png"
+    },
+    {
+        title: "Calidad Garantizada",
+        description: "Trabajamos exclusivamente con repuestos originales y certificaciones de fábrica para asegurar el mejor rendimiento.",
+        icon: "../../public/brands/card2.png"
+    },
+    {
+        title: "Sin Compromiso",
+        description: "Te ofrecemos un diagnóstico gratuito y un presupuesto sin compromiso. ¡Decide con total confianza!",
+        icon: "../../public/brands/card3.png"
+    }
 ]);
+
 
 const reviews = ref([
     { name: "Carlos López", comment: "Servicio rápido y confiable.", image: "../../public/brands/cliente1.jpg" },
