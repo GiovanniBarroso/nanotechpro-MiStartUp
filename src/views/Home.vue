@@ -49,16 +49,17 @@
 
         <!-- UBICACIÓN Y FAQ -->
         <section class="location-faq">
-            <div class="location">
+            <div class="info-box">
                 <h3>Ubicación</h3>
                 <img src="/map.png" alt="Ubicación" />
+                <p>📍 Dirección: Calle Ejemplo 123, Ciudad.</p>
+                <p>📞 Teléfono: +34 123 456 789</p>
             </div>
-            <div class="faq">
+            <div class="info-box">
                 <h3>FAQ</h3>
-                <p><strong>¿Cuánto tarda en repararse mi dispositivo?</strong><br />Depende del daño, pero en promedio
-                    24-48 horas.</p>
-                <p><strong>¿Ofrecen garantía en las reparaciones?</strong><br />Sí, todas las reparaciones tienen
-                    garantía de 6 meses.</p>
+                <p><strong>⏳ ¿Cuánto tarda la reparación?</strong><br> En promedio 24-48 horas.</p>
+                <p><strong>✅ ¿Tienen garantía?</strong><br> Sí, de 3 a 6 meses.</p>
+                <p><strong>📩 ¿Cómo contactar?</strong><br> WhatsApp o formulario.</p>
             </div>
         </section>
     </div>
@@ -216,19 +217,32 @@ const nextReview = () => {
     cursor: pointer;
 }
 
+
 /* UBICACIÓN Y FAQ */
 .location-faq {
     display: flex;
-    justify-content: space-between;
-    padding: 50px;
-}
-
-.location img {
-    width: 300px;
+    justify-content: space-around;
+    background: white;
+    padding: 10px;
     border-radius: 10px;
+    margin: 50px auto;
+    width: 80%;
+    flex-wrap: wrap;
 }
 
-.faq p {
-    margin-bottom: 10px;
+.info-box {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.info-box img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
 }
 </style>
