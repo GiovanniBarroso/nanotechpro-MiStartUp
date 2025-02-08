@@ -1,0 +1,196 @@
+/* Estilos generales */
+.products-page {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+/* MARCAS */
+.brands {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.brands-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-bottom: 25px;
+    color: black;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.brand-logos img {
+    width: 100px;
+    filter: grayscale(100%);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.brand-logos img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* FILTROS */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-bar,
+.category-filter {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    min-width: 250px;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-bar,
+    .category-filter {
+        width: 90%;
+    }
+}
+
+/* Estilos de los logos de marcas */
+.brand-logo {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s;
+}
+
+.brand-logo:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        width: 80px;
+    }
+}
+
+.search-bar:focus,
+.category-filter:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* PRODUCTOS */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Contenedor de imagen responsivo */
+.product-image-wrapper {
+    width: 100%;
+    height: 200px;
+    /* Altura fija para uniformidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Hacer que la imagen se ajuste proporcionalmente */
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-info {
+    margin-top: 15px;
+}
+
+/* BOTÓN */
+.details-button {
+    background: #FF9800;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.details-button:hover {
+    background: #ffc107;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .product-image-wrapper {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .product-image-wrapper {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .product-image-wrapper {
+        height: 140px;
+    }
+}
