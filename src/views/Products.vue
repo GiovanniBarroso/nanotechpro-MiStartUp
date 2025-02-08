@@ -9,17 +9,20 @@
             </div>
         </section>
 
-        <!-- Filtros de búsqueda -->
-        <div class="filters">
-            <input type="text" v-model="searchQuery" placeholder="🔍 Buscar producto..." class="search-bar" />
-            <select v-model="selectedCategory" class="category-filter">
-                <option value="">📂 Todas las categorías</option>
-                <option v-for="category in categories" :key="category">{{ category }}</option>
-            </select>
+
+        <!-- Contenedor de la cabecera de productos -->
+        <div class="products-header">
+            <h3 class="products-title" id="productos">Productos disponibles</h3>
+            <div class="filters">
+                <input type="text" v-model="searchQuery" placeholder="🔍 Buscar producto..." class="search-bar" />
+                <select v-model="selectedCategory" class="category-filter">
+                    <option value="">📂 Todas las categorías</option>
+                    <option v-for="category in categories" :key="category">{{ category }}</option>
+                </select>
+            </div>
         </div>
 
-        <!-- Sección de productos -->
-        <h3 class="products-title" id="productos">Productos disponibles</h3>
+        <!-- Grid de productos -->
         <div class="product-grid">
             <div v-for="product in filteredProducts" :key="product.id" class="product-card">
                 <div class="product-image-wrapper">
@@ -57,17 +60,86 @@ const brands = ref([
 // Categorías
 const categories = ref(["Móviles", "Ordenadores", "Consolas"]);
 
+
 // Simulación de productos
 const products = ref([
-    { id: 1, name: "iPhone 14", category: "Móviles", description: "Pantalla OLED, 128GB", image: "/products/iphone14.png", brand: "Apple" },
-    { id: 2, name: "Samsung Galaxy S22", category: "Móviles", description: "Exynos 2200, 256GB", image: "/products/galaxys22.png", brand: "Samsung" },
-    { id: 3, name: "Xiaomi Mi 12", category: "Móviles", description: "Snapdragon 8 Gen 1, 128GB", image: "/products/mi12.png", brand: "Xiaomi" },
-    { id: 4, name: "HP Pavilion", category: "Ordenadores", description: "Intel i7, 16GB RAM, SSD 512GB", image: "/products/hp-pavilion.png", brand: "HP" },
-    { id: 5, name: "MSI Raider", category: "Ordenadores", description: "Intel i9, 64GB RAM, RTX 4090", image: "/products/msi-raider.png", brand: "MSI" },
-    { id: 6, name: "Gigabyte Aero", category: "Ordenadores", description: "Ryzen 7, 32GB RAM, SSD 1TB", image: "/products/gigabyte.png", brand: "Gigabyte" },
-    { id: 7, name: "PlayStation 5", category: "Consolas", description: "Ultra HD Blu-ray, 825GB SSD", image: "/products/ps5.png", brand: "Sony" },
-    { id: 8, name: "Xbox Series X", category: "Consolas", description: "AMD Zen 2, 1TB SSD", image: "/products/xbox.png", brand: "Xbox" },
-    { id: 9, name: "Nintendo Switch OLED", category: "Consolas", description: "Pantalla OLED, 64GB", image: "/products/switch.png", brand: "Nintendo" },
+    // Móviles 📱
+    {
+        id: 1,
+        name: "iPhone 14",
+        category: "Móviles",
+        description: "Pantalla Super Retina XDR OLED de 6.1”, chip A15 Bionic, doble cámara de 12MP y Face ID.",
+        image: "/products/iphone14.png",
+        brand: "Apple"
+    },
+    {
+        id: 2,
+        name: "Samsung Galaxy S22",
+        category: "Móviles",
+        description: "Pantalla Dynamic AMOLED 2X de 6.1”, Exynos 2200, 256GB de almacenamiento y triple cámara con 50MP.",
+        image: "/products/galaxys22.png",
+        brand: "Samsung"
+    },
+    {
+        id: 3,
+        name: "Xiaomi Mi 12",
+        category: "Móviles",
+        description: "Snapdragon 8 Gen 1, pantalla AMOLED de 6.28” a 120Hz, batería de 4500mAh y carga rápida de 67W.",
+        image: "/products/mi12.png",
+        brand: "Xiaomi"
+    },
+
+    // Ordenadores 💻
+    {
+        id: 4,
+        name: "HP Pavilion",
+        category: "Ordenadores",
+        description: "Laptop con procesador Intel Core i7 de 12ª gen, 16GB RAM DDR4, SSD NVMe de 512GB y pantalla Full HD de 15.6”.",
+        image: "/products/hp-pavilion.png",
+        brand: "HP"
+    },
+    {
+        id: 5,
+        name: "MSI Raider",
+        category: "Ordenadores",
+        description: "Gaming laptop con Intel Core i9, 64GB RAM DDR5, NVIDIA RTX 4090 y pantalla 4K 144Hz.",
+        image: "/products/msi-raider.png",
+        brand: "MSI"
+    },
+    {
+        id: 6,
+        name: "Gigabyte Aero",
+        category: "Ordenadores",
+        description: "Ultrabook con Ryzen 7 6800H, 32GB RAM, SSD NVMe de 1TB y pantalla OLED de 16” con resolución 4K.",
+        image: "/products/gigabyte.png",
+        brand: "Gigabyte"
+    },
+
+    // Consolas 🎮
+    {
+        id: 7,
+        name: "PlayStation 5",
+        category: "Consolas",
+        description: "Consola de última generación con SSD de 825GB, Ray Tracing, 4K a 120Hz y mando DualSense con respuesta háptica.",
+        image: "/products/ps5.png",
+        brand: "Sony"
+    },
+    {
+        id: 8,
+        name: "Xbox Series X",
+        category: "Consolas",
+        description: "Potente consola con CPU AMD Zen 2, 1TB SSD NVMe, Ray Tracing, 4K real y compatibilidad con juegos de generaciones anteriores.",
+        image: "/products/xbox.png",
+        brand: "Xbox"
+    },
+    {
+        id: 9,
+        name: "Nintendo Switch OLED",
+        category: "Consolas",
+        description: "Consola híbrida con pantalla OLED de 7”, batería de larga duración y compatibilidad con juegos de Nintendo exclusivos.",
+        image: "/products/switch.png",
+        brand: "Nintendo"
+    },
 ]);
 
 // Filtros
