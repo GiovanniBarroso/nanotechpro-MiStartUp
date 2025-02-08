@@ -43,6 +43,5 @@
 </template>
 
 <script setup>
-
 import "../assets/css/contact.css";
 </script>

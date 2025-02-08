@@ -120,25 +120,25 @@ const values = ref([
     {
         title: "Tiempo Récord",
         description: "Optimizamos cada proceso para que tu reparación esté lista en menos de 48 horas, sin comprometer la calidad.",
-        icon: "../../public/brands/card1.png"
+        icon: "/brands/card1.png"
     },
     {
         title: "Calidad Garantizada",
         description: "Trabajamos exclusivamente con repuestos originales y certificaciones de fábrica para asegurar el mejor rendimiento.",
-        icon: "../../public/brands/card2.png"
+        icon: "/brands/card2.png"
     },
     {
         title: "Sin Compromiso",
         description: "Te ofrecemos un diagnóstico gratuito y un presupuesto sin compromiso. ¡Decide con total confianza!",
-        icon: "../../public/brands/card3.png"
+        icon: "/brands/card3.png"
     }
 ]);
 
 
 const reviews = ref([
-    { name: "Carlos López", comment: "Servicio rápido y confiable.", image: "../../public/brands/cliente1.jpg" },
-    { name: "María González", comment: "Repararon mi móvil en 24 horas.", image: "../../public/brands/cliente2.jpeg" },
-    { name: "David Fernández", comment: "Muy satisfecho con la atención.", image: "../../public/brands/cliente3.jpg" },
+    { name: "Carlos López", comment: "Servicio rápido y confiable.", image: "brands/cliente1.jpg" },
+    { name: "María González", comment: "Repararon mi móvil en 24 horas.", image: "brands/cliente2.jpeg" },
+    { name: "David Fernández", comment: "Muy satisfecho con la atención.", image: "/brands/cliente3.jpg" },
 ]);
 
 const currentReview = ref(0);
