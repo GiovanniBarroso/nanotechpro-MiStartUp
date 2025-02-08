@@ -11,22 +11,23 @@
             <!-- FORMULARIO -->
             <form class="contact-form" @submit.prevent="handleSubmit">
                 <div class="input-group">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-label="Usuario"></i>
                     <input type="text" v-model="name" placeholder="Nombre de Usuario" required />
                 </div>
                 <div class="input-group">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-label="Email"></i>
                     <input type="email" v-model="email" placeholder="Email" required />
                 </div>
                 <div class="input-group">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-phone" aria-label="Teléfono"></i>
                     <input type="tel" v-model="phone" placeholder="Número de teléfono" required />
                 </div>
                 <textarea v-model="message" placeholder="Mensaje" required></textarea>
-                <button type="submit" :disabled="loading">
+                <button type="submit" :disabled="loading || !isFormValid">
                     <span v-if="!loading">Enviar</span>
                     <span v-else class="loader"></span>
                 </button>
+                <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
             </form>
 
             <!-- INFORMACIÓN DE CONTACTO + REDES SOCIALES -->
@@ -34,19 +35,19 @@
                 <h3>Otros métodos de contacto</h3>
                 <div class="social-icons">
                     <a href="#" target="_blank">
-                        <img src="../../brands/facebook icon.png" alt="Facebook" />
+                        <img :src="facebookIcon" alt="Facebook" />
                     </a>
                     <a href="#" target="_blank">
-                        <img src="../../brands/twitter icon.png" alt="Twitter" />
+                        <img :src="twitterIcon" alt="Twitter" />
                     </a>
                     <a href="#" target="_blank">
-                        <img src="../../brands/ig icon.png" alt="Instagram" />
+                        <img :src="instagramIcon" alt="Instagram" />
                     </a>
                 </div>
                 <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> nanotechpro@gmail.com</p>
                 <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> +34 123 456 789</p>
                 <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle Ejemplo 123, Ciudad</p>
-                
+
                 <!-- MAPA INTERACTIVO -->
                 <div class="map-container">
                     <iframe
@@ -60,20 +61,46 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import "../assets/css/contact.css";
+import { ref, computed } from "vue";
+
+// Rutas correctas (sin espacios en los nombres de archivos)
+import facebookIcon from "@/assets/img/brands/facebook-icon.png";
+import twitterIcon from "@/assets/img/brands/twitter-icon.png";
+import instagramIcon from "@/assets/img/brands/ig-icon.png";
+
+import "@/assets/css/contact.css";
 
 const name = ref("");
 const email = ref("");
 const phone = ref("");
 const message = ref("");
 const loading = ref(false);
+const successMessage = ref("");
+
+// ✅ Computed para validar formulario
+const isFormValid = computed(() =>
+    name.value.trim() !== "" &&
+    email.value.trim() !== "" &&
+    phone.value.trim() !== "" &&
+    message.value.trim() !== ""
+);
 
 const handleSubmit = () => {
+    if (!isFormValid.value) {
+        successMessage.value = "Por favor, completa todos los campos.";
+        return;
+    }
+
     loading.value = true;
     setTimeout(() => {
         loading.value = false;
-        alert("Mensaje enviado con éxito");
+        successMessage.value = "Mensaje enviado con éxito.";
+
+        // Limpiar formulario
+        name.value = "";
+        email.value = "";
+        phone.value = "";
+        message.value = "";
     }, 2000);
 };
 </script>

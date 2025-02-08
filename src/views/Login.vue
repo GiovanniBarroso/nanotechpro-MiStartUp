@@ -1,11 +1,9 @@
 <template>
     <div class="login-page">
         <div class="login-container">
-            <!-- Logo de la empresa (opcional) -->
+            <!-- Logo de la empresa -->
             <div class="logo">
-                <img src="/brands/logo.png" alt="Nanotechpro Logo" />
-
-
+                <img :src="logo" alt="Nanotechpro Logo" />
             </div>
 
             <!-- Título -->
@@ -31,11 +29,11 @@
                     <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>
 
-                <button type="submit" :disabled="loading || !username || !password">
+                <!-- Botón de envío con animación de carga -->
+                <button type="submit" :disabled="loading || !isFormValid">
                     <span v-if="!loading">Entrar</span>
                     <span v-else class="loader"></span>
                 </button>
-
             </form>
 
             <!-- Divider -->
@@ -53,7 +51,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import logo from "@/assets/img/brands/logo.png"; 
 import "../assets/css/login.css";
 
 const username = ref("");
@@ -61,9 +60,13 @@ const password = ref("");
 const rememberMe = ref(false);
 const loading = ref(false);
 
-const handleLogin = () => {
-    loading.value = true;
+// ✅ Validación del formulario (deshabilita botón si falta info)
+const isFormValid = computed(() => username.value.trim() !== "" && password.value.trim() !== "");
 
+const handleLogin = () => {
+    if (!isFormValid.value) return; // Previene el login si el formulario está incompleto
+
+    loading.value = true;
     setTimeout(() => {
         loading.value = false;
         alert("Inicio de sesión exitoso");

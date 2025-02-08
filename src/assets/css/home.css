@@ -26,7 +26,7 @@
 
 /* HERO SECTION */
 .hero {
-    background: url('brands/mirrored_image.png') center/cover;
+    background: url('/src/assets/img/brands/mirrored_image.png') center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
