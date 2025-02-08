@@ -5,21 +5,41 @@
     color: rgb(0, 0, 0);
 }
 
+/* Animación fadeIn */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* HERO SECTION */
 .hero {
-    background: url('../../../public/brands/mirrored_image.png') center/cover ;
-    height: 100vh; 
+    background: url('brands/mirrored_image.png') center/cover;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     position: relative;
-    
+    padding-top: 200px;
 }
+
 
 
 .hero-overlay {
     width: 50%;
-    height: 100%;
+    height: 100vw;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.0));
     display: flex;
     align-items: center;
@@ -46,11 +66,25 @@
 .cta-container {
     display: flex;
     justify-content: center;
-    margin-top: -40px; /* Subimos el botón sobre la siguiente sección */
-    margin-bottom: -40px; /* Damos espacio antes de la sección de marcas */
+
+    margin-top: -40px;
+    margin-bottom: -40px;
     position: relative;
     z-index: 10;
 }
+
+/* Ajustamos el botón en móvil */
+@media (max-width: 768px) {
+    .cta-container {
+        margin-top: -30px;
+        margin-bottom: -20px;
+    }
+
+    .hero {
+        width: 100vw;
+    }
+}
+
 
 /* BOTÓN MEJORADO */
 .cta-button {
@@ -121,7 +155,8 @@
         width: 100%;
         padding: 0 5%;
         text-align: center;
-        background: rgba(0, 0, 0, 0.7); /* Fondo oscuro en móviles */
+        background: rgba(0, 0, 0, 0.7);
+        /* Fondo oscuro en móviles */
     }
 
     .hero-content {
@@ -156,14 +191,18 @@
     margin-bottom: 30px;
 }
 
+/* MARCAS */
 .brands {
     text-align: center;
     padding: 60px 20px;
     background: #f5f5f5;
+    position: relative;
+    z-index: 5;
 }
 
 .brands-text {
-    font-size: 3rem; /* Aumentamos el tamaño del texto en pantallas grandes */
+    font-size: 3rem;
+    /* Aumentamos el tamaño del texto en pantallas grandes */
     font-weight: bold;
     padding-bottom: 30px;
 }
@@ -173,7 +212,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px; /* Más espacio entre logos */
+    gap: 100px;
+    /* Más espacio entre logos */
     flex-wrap: wrap;
     max-width: 80%;
     margin-left: auto;
@@ -182,7 +222,8 @@
 
 /* Tamaño de logos */
 .brand-logos img {
-    width: 140px; /* Aumentamos el tamaño base */
+    width: 140px;
+    /* Aumentamos el tamaño base */
     max-width: 100%;
     height: auto;
     filter: grayscale(100%);
@@ -360,7 +401,8 @@
     text-align: left;
     flex: 1;
     min-width: 250px;
-    max-width: 800px;  /* Límite para mejor legibilidad */
+    max-width: 800px;
+    /* Límite para mejor legibilidad */
     margin: 10px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -380,7 +422,8 @@
 }
 
 .faq-list li:hover {
-    background: #e9ecef;  /* Suave gris al pasar el mouse */
+    background: #e9ecef;
+    /* Suave gris al pasar el mouse */
     cursor: pointer;
 }
 

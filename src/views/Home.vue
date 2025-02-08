@@ -19,7 +19,7 @@
         </div>
 
         <!-- MARCAS -->
-        <section class="brands">
+        <section class="brands fade-in">
             <h2 class="brands-text">Trabajamos con las mejores marcas</h2>
             <div class="brand-logos">
                 <img v-for="brand in brands" :key="brand.name" :src="brand.logo" :alt="brand.name" />
@@ -27,7 +27,7 @@
         </section>
 
         <!-- VALORES DE LA EMPRESA -->
-        <section class="values">
+        <section class="values fade-in">
             <h2 class="section-title">Nuestros Valores</h2>
             <div class="values-grid">
                 <div v-for="value in values" :key="value.title" class="value-card">
@@ -54,7 +54,7 @@
         </section>
 
         <!-- UBICACIÓN Y FAQ -->
-        <section class="location-faq">
+        <section class="location-faq fade-in">
             <div class="info-box">
                 <h3>📍 Ubicación</h3>
                 <div class="map-container">
