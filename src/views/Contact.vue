@@ -1,49 +1,48 @@
 <template>
-    <div class="contact-container">
-        <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Nombre" />
-            <input type="email" placeholder="Correo" />
-            <textarea placeholder="Mensaje"></textarea>
-            <button>Enviar</button>
-        </form>
+    <div class="contact-page">
+        <!-- TÍTULO -->
+        <h2 class="contact-title">
+            ¿Tienes dudas? <br />
+            <span>Te ayudamos de inmediato</span>
+        </h2>
+
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="contact-container">
+            <!-- FORMULARIO -->
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre de Usuario" required />
+                <input type="email" placeholder="Email" required />
+                <input type="tel" placeholder="Número de teléfono" required />
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- INFORMACIÓN DE CONTACTO + REDES SOCIALES -->
+            <div class="contact-info">
+                <h3>Otros métodos de contacto</h3>
+
+                <!-- Redes sociales con logos -->
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <img src="../../brands/facebook icon.png" alt="Facebook" />
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="../../brands/twitter icon.png" alt="Twitter" />
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="../../brands/ig icon.png" alt="Instagram" />
+                    </a>
+                </div>
+
+                <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> nanotechpro@gmail.com</p>
+                <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> +34 123 456 789</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle Ejemplo 123, Ciudad</p>
+            </div>
+        </div>
     </div>
 </template>
 
-<style scoped>
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-}
+<script setup>
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    gap: 15px;
-}
-
-input,
-textarea {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background: orange;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background: darkorange;
-}
-</style>
+import "../assets/css/contact.css";
+</script>
