@@ -332,17 +332,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 20px; /* 🔄 Reducimos el espacio entre los elementos */
+    flex-wrap: wrap; /* 🔄 Permitir que los elementos se acomoden mejor en pantallas pequeñas */
 }
 
 .review-card {
     background: white;
     color: black;
-    padding: 125px;
+    padding: 50px; /* 🔄 Reducimos el padding para móviles */
     border-radius: 15px;
-    width: 300px;
+    width: 100%;
+    max-width: 400px; /* 🔄 Permitir que se adapte hasta 400px */
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem; /* 🔄 Reducimos ligeramente el tamaño de la fuente */
 }
 
 .client-photo {
@@ -364,6 +366,27 @@
 .arrow:hover {
     color: #ffeb3b;
 }
+
+
+
+@media (max-width: 768px) {
+    .review-container {
+        flex-direction: column; /* 🔄 Alinear en columna para mejor visualización */
+        gap: 10px;
+    }
+
+    .review-card {
+        padding: 30px; /* 🔄 Ajuste de padding en móviles */
+        max-width: 90%;
+    }
+
+    .arrow {
+        display: none; /* 🔄 Reducimos el tamaño de las flechas */
+    }
+}
+
+
+
 
 /* UBICACIÓN Y FAQ */
 .location-faq {

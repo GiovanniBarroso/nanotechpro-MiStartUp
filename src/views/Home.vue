@@ -40,7 +40,7 @@
 
         <!-- RESEÑAS DE CLIENTES -->
         <section class="reviews fade-in" v-intersect>
-            <h2 class="section-title"> Lo que dicen nuestros clientes</h2>
+            <h2 class="section-title"> Valoraciones</h2>
             <div class="review-container">
                 <button @click="prevReview" class="arrow">&lt;</button>
                 <div class="review-card">

@@ -61,6 +61,7 @@
 </template>
 
 <script setup>
+
 import { ref, computed } from "vue";
 
 // Rutas correctas (sin espacios en los nombres de archivos)
@@ -84,6 +85,14 @@ const isFormValid = computed(() =>
     phone.value.trim() !== "" &&
     message.value.trim() !== ""
 );
+
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+    window.dispatchEvent(new Event("resize"));
+});
+
 
 const handleSubmit = () => {
     if (!isFormValid.value) {
