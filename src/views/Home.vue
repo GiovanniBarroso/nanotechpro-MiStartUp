@@ -105,12 +105,26 @@
             </div>
 
         </section>
+        <section class="promotions">
+            <h2>🔥 Promociones Especiales 🔥</h2>
+            <div class="promotions-container">
+                <div v-for="promo in promotions" :key="promo.id" class="promotion-card">
+                    <h3>{{ promo.title }}</h3>
+                    <p>{{ promo.description }}</p>
+                    <span>Válido hasta: {{ promo.validUntil }}</span>
+                </div>
+            </div>
+        </section>
+
     </div>
 </template>
 
 <script setup>
+import { promotions } from "@/data/promotions.js";
+
 import { ref, onMounted, onUnmounted } from "vue";
 import "../assets/css/home.css";
+import "../assets/css/promotions.css";
 import appleLogo from "@/assets/img/brands/apple.png";
 import samsungLogo from "@/assets/img/brands/samsung.png";
 import huaweiLogo from "@/assets/img/brands/huawei.png";
